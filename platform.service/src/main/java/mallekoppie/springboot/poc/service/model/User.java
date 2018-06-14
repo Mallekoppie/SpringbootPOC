@@ -1,4 +1,4 @@
-package mallekoppie.springboot.poc.model;
+package mallekoppie.springboot.poc.service.model;
 
 public class User {
 	String name;

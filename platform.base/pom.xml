@@ -30,10 +30,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jersey</artifactId>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-jersey</artifactId> 
+			</dependency> -->
 		<!-- <dependency> <groupId>org.springframework.cloud</groupId> <artifactId>spring-cloud-starter-consul-discovery</artifactId> 
 			</dependency> -->
 
@@ -61,6 +59,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>  <!-- added -->
+					<layout>ZIP</layout> <!-- to use PropertiesLaunchar -->
+					<mainClass>mallekoppie.springboot.poc.Application</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -1,10 +1,10 @@
-package mallekoppie.springboot.poc;
+package mallekoppie.springboot.poc.service;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import mallekoppie.springboot.poc.model.User;
+import mallekoppie.springboot.poc.service.model.User;
 
 @RestController
 public class UserController {
