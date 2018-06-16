@@ -46,13 +46,14 @@
 			<artifactId>platform.implementations</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>cb.services</groupId>
 			<artifactId>test</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 
+<!-- 
 	<build>
 		<plugins>
 			<plugin>
@@ -61,6 +62,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
+ -->
 
 </project>

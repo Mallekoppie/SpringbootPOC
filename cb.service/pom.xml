@@ -28,10 +28,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>cb.platform</groupId>
-			<artifactId>platform.contracts</artifactId>
+			<artifactId>base</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
+			<groupId>cb.platform</groupId>
+			<artifactId>platform.contracts</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -40,7 +45,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
+		</dependency> -->
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>  <!-- added -->
+					<layout>ZIP</layout> <!-- to use PropertiesLaunchar -->
+					<mainClass>cb.platform.BaseApplication</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
