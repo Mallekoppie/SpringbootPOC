@@ -9,5 +9,5 @@ import java.lang.annotation.Target;
 @Retention(RUNTIME)
 @Target(METHOD)
 public @interface TrackExecutionTime {
-	//int MaxTimeInMS();
+	int MaxTimeInMS() default 80;
 }

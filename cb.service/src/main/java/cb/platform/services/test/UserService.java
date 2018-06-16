@@ -16,7 +16,7 @@ public class UserService {
 	ILogger _logger;
 	
 	@GetMapping(path = "/user")
-	@TrackExecutionTime
+	@TrackExecutionTime(MaxTimeInMS=1)
 	public String getTest() {
 		_logger.WriteInfo("Called getTest method");
 		return "another user service";
