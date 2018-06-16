@@ -21,12 +21,12 @@ public class TrackExecutionAspect {
 	
 	@Around(value = "@annotation(cb.platform.contract.annotations.TrackExecutionTime)")
 	public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
-
+		
 		MethodSignature method = (MethodSignature)joinPoint.getSignature();
 		TrackExecutionTime annotation = method.getMethod().getAnnotation(TrackExecutionTime.class);
 
 		long maxExecutionTimeLong = (long)annotation.MaxTimeInMS();
-		//System.out.println("Configured max execution time in ms" + maxExecutionTimeLong);
+		
 		_logger.WriteInfo("Configured max execution time in ms" + maxExecutionTimeLong);
 		
 		long startTime = System.currentTimeMillis();
@@ -36,7 +36,7 @@ public class TrackExecutionAspect {
 		long executionTime = System.currentTimeMillis() - startTime;
 
 		if (executionTime > 0 && executionTime > maxExecutionTimeLong) {
-			//System.out.println(String.format("Method %s execution time: %d", joinPoint.getSignature(), executionTime));
+			
 			_logger.WriteInfo(String.format("Method %s execution time: %d", joinPoint.getSignature(), executionTime));
 		}
 
