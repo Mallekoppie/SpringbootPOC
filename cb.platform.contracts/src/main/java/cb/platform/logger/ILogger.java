@@ -1,4 +1,4 @@
-package cb.platform.contract;
+package cb.platform.logger;
 
 public interface ILogger {
 	void WriteInfo(String message);

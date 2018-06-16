@@ -1,9 +1,8 @@
-package cb.platform.implementation;
+package cb.platform.logger;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import cb.platform.contract.ILogger;
+import cb.platform.logger.ILogger;
 
 @Configuration
 public class Logger implements ILogger {
