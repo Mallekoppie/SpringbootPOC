@@ -38,7 +38,12 @@
 		</dependency>
 		<dependency>
 			<groupId>cb.platform</groupId>
-			<artifactId>platform-interface</artifactId>
+			<artifactId>platform.contracts</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>cb.platform</groupId>
+			<artifactId>platform.implementations</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
