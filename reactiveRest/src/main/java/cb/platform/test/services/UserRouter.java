@@ -1,4 +1,4 @@
-package cb.platform.test.reactiveRest;
+package cb.platform.test.services;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

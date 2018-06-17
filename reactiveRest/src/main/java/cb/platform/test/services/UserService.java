@@ -1,4 +1,4 @@
-package cb.platform.test.reactiveRest;
+package cb.platform.test.services;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package cb.platform.test.reactiveRest;
+package cb.platform.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
