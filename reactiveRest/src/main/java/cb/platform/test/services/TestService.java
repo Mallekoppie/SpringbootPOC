@@ -1,11 +1,10 @@
 package cb.platform.test.services;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.reactive.function.BodyInserters;
-import org.springframework.web.reactive.function.server.ServerRequest;
-import org.springframework.web.reactive.function.server.ServerResponse;
 
 import reactor.core.publisher.Mono;
 
@@ -19,9 +18,11 @@ public class TestService {
 	}
 	
 	@GetMapping("/test/{id}")
-	public Mono<String> getTestWithParam(@PathVariable(name="id") String id) {
+	public Mono<ResponseEntity<String>> getTestWithParam(@PathVariable(name="id") String id) {
 		
-		return Mono.just("Rest result from ID: " + id);
+		
+		
+		return Mono.just(new ResponseEntity<String>("Rest result from ID: " + id, HttpStatus.ACCEPTED));
 	}
 
 }
