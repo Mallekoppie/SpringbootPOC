@@ -1,7 +1,7 @@
 package cb.platform.test.filters;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
-import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
@@ -24,9 +24,14 @@ public class CustomFilter implements WebFilter {
 		ServerHttpRequest request = exchange.getRequest();
 		log(request.getPath().toString());
 		
-		Mono<Void> filter = chain.filter(exchange);
+		//exchange.getResponse().setStatusCode(HttpStatus.SERVICE_UNAVAILABLE);
+		
+		
+		Mono<Void> first = Mono.first(chain.filter(exchange));
 				
-		return filter;
+		log("end");
+		
+		return first;
 	}
 
 }
