@@ -15,7 +15,12 @@ public class UserService {
 	@GetMapping("/user")
 	@AlertOnLongExecutionTime
 	public Mono<ServerResponse> getUser(ServerRequest request){
-		return ServerResponse.ok().body(BodyInserters.fromObject("Reactive user"));
+		
+		var myUser = new User();
+		myUser.setName("username");
+		myUser.setSurname("some surname");
+		
+		return ServerResponse.ok().body(BodyInserters.fromObject(myUser));
 	}
 
 }

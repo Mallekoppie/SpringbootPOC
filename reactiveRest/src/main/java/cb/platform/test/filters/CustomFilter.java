@@ -1,7 +1,7 @@
 package cb.platform.test.filters;
 
-import java.util.Iterator;
-
+import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
@@ -20,10 +20,13 @@ public class CustomFilter implements WebFilter {
 	public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
 		
 		log("Executing filter");
+	
+		ServerHttpRequest request = exchange.getRequest();
+		log(request.getPath().toString());
 		
-		var result = chain.filter(exchange);
-		
-		return result;
+		Mono<Void> filter = chain.filter(exchange);
+				
+		return filter;
 	}
 
 }
